@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" id="maincss" />
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+  <title>21</title>
+</head>
+
+<body id="BColor">
+  <h1></h1>
+  <script src="../js/date.js"></script>
+  <script>
+    let date1 = new Date();
+    let year = date1.getFullYear();
+    let month = date1.getMonth() + 1;
+    let day = date1.getDate();
+    let persiandate = gregorian_to_jalali(year, month, day);
+    // gregorian calendar:تقویم میلادی
+    let currentmonth = persiandate[1];
+    if (currentmonth < 4) {
+      document.getElementById("maincss").setAttribute("href", "../css/1.css");
+      document.getElementsByTagName("h1")[0].innerHTML = " بهار زیبا رسید";
+    } else if (currentmonth > 3 && currentmonth < 7) {
+      document.getElementById("maincss").setAttribute("href", "../css/2.css");
+      document.getElementsByTagName("h1")[0].innerHTML = "تابستان";
+    } else if (currentmonth > 6 && currentmonth < 10) {
+      document.getElementById("maincss").setAttribute("href", "../css/3.css");
+      document.getElementsByTagName("h1")[0].innerHTML = "پاییز";
+    } else {
+      document.getElementById("maincss").setAttribute("href", "../css/4.css");
+      document.getElementsByTagName("h1")[0].innerHTML = "زمستان";
+    }
+  </script>
+</body>
+<!-- یکی از مهم ترین نکات این تمرین دادن ای دی  به لینک مربوط به سی اس اس بود 
+document.getElementById("BColor").style.backgroundColor = "red"
+خط بالا راه بهتری است برای تغییر بکگراند
+-->
+
+</html>

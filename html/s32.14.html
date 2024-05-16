@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <title>14</title>
+</head>
+
+<body>
+  <h1></h1>
+  <script>
+    let news = [
+      "there is nothing to fear ",
+      "news title 2",
+      "hello new world",
+      "you can do it just focus",
+    ];
+
+    function changeHeadLine() {
+      document.getElementsByTagName("h1")[0].innerHTML =
+        news[Math.round(Math.random() * 3)];
+    }
+
+    let timer = setInterval(changeHeadLine, 1000);
+
+    // let number1 = Math.random() * 10;
+    // let number2 = Math.round(number1);
+    // console.log(number1, number2);
+  </script>
+</body>
+<!-- برای متن های تبلیغاتی مناسب  
+اخبار کوتاه 
+-->
+
+</html>

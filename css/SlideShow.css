@@ -1,0 +1,23 @@
+body {
+  /* background-image: linear-gradient(pink, white, red); */
+  font-family: cursive;
+  font-size: 16px;
+}
+/* s info-season */
+.glow {
+  font-size: 1.5em;
+  color: black;
+  animation: glow 1s ease-in-out infinite;
+}
+/* Note: To add more than one shadow to the text, add a comma-separated list of shadows. */
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #3d05e3, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #bc00e6, 0 0 50px #ffffff, 0 0 60px #8c067a, 0 0 70px #ffffff;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #854dff, 0 0 60px #d09ffe, 0 0 70px #a57af1, 0 0 80px #c50d9a;
+  }
+}
+/* e info-season */

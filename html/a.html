@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row advertise shadow border border-primary m-4 p-2 d-flex justify-content-center">
+        <div class="col-lg advertise-box  d-flex justify-content-center">
+            <h3 class="advertise-box-text"></h3>
+        </div>
+    </div>
+    <script>
+        let news = [
+            "there is nothing to fear ",
+            "news title 2",
+            "hello new world",
+            "you can do it just focus",
+        ];
+
+        let advertisingBoxText = document.getElementsByClassName(".advertise-box-text")[0];
+        let advertiseBox = document.getElementsByClassName("advertise-box")[0];
+
+        let myTimer = setInterval(changeColor, 5000);
+        let myTimer2 = setInterval(showAdvertising, 5000);
+
+        function showAdvertising() {
+            let randomIndex = Math.floor(Math.random() * news.length);
+            advertiseBoxText.innerHTML = news[randomIndex];
+        }
+        function changeColor() {
+            let red = Math.round(Math.random() * 255);
+            let green = Math.round(Math.random() * 255);
+            let blue = Math.round(Math.random() * 255);
+            advertisingBox.style.backgroundColor = `rgb(${red},${green},${blue})`;
+
+        }
+        myTimer
+        myTimer2
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=yourAPIKey&sensor=false"></script>
+    <script type="text/javascript">
+        var lat;
+        var lng;
+
+        function initialize() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+
+
+        }
+        function showPosition(position) {
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+            var myLatlng = new google.maps.LatLng(lat, lng);
+
+            var myTittle = "My Current Location! Lat: " + lat + "lng: " + lng;
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                title: myTittle
+            });
+
+            var mapOptions = {
+                center: myLatlng,
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"),
+                mapOptions);
+            marker.setMap(map);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container">
+        <h1 class="status"></h1>
+        <button class="find-state"></button>
+        <script>
+            const findMyState = () => {
+                const status = document.querySelector('.status');
+
+                const success = (position) => {
+                    console.log(position)
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    console.log(latitude + "" + longitude);
+                    const geoApiUrl = `http://api.bigdatacloud.net/data/reverse-geocode-client?
+                    latitude=${latitude}&longitude=${longitude}& localityLanguage=en
+                     `
+
+                    fetch(geoApiUrl)
+                        .then(res => res.json())
+                        .then(data => {
+                            status.textContent = data.perencipalSubdivision
+                        })
+                }
+                const error = () => {
+                    status.textContent = 'unavailble'
+                }
+                navigator.geolocation.getCurrentPosition(success, error);
+            }
+            document.querySelector('.find-state').addEventListener('click', findMyState);
+        </script>
+    </div> -->
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <title>flag</title>
+</head>
+
+<body class="bg-primary">
+  <h1 id="myflag">hi</h1>
+
+  <script>
+    document.getElementById("myflag").addEventListener("click", changetext);
+
+    let flag = true;
+    function changetext() {
+      if (flag) {
+        document.getElementById("myflag").innerHTML = "bye";
+        flag = !flag;
+      } else {
+        document.getElementById("myflag").innerHTML = "hi";
+        flag = !flag;
+      }
+    }
+  </script>
+</body>
+
+</html>
+<!-- The flag is a special variable that can only take two values: true and false or 1 and 0.
+       Using flags, you can solve problems that check for the absence of something: for example,
+        you can check that there is no element with a certain value in an array.
+      مثلا ایا پفک در سبد خرید هست اگر هست به تعدادان اضافه کن و اگر نیست از ان را  در سبد خرید ایجاد کن
+       A flag variable, it is a variable you define to have one value until some condition is
+        true or false in which case you change the variable's value. It is a variable you can 
+        use to control the flow of a function or statement, allowing you to check for certain 
+        conditions while your function executing.
+
+        Flag variable is same in every language
+
+        Flag variable is boolean variable.
+      -->
